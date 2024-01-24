@@ -1,7 +1,7 @@
 This repository contains the code and data associated with **CoMPosT: Characterizing and Evaluating Caricature in LLM Simulations**, our EMNLP 2023 paper. If you have any questions, please contact me at: `myra [at] cs [dot] stanford [dot] edu`
 
 # Code
-- `get_caricature_scores.py`: script to run to compute individuation and exaggeration scores for a given dataset of simulations (example usage: `python get_caricature_scores.py examples/twitter_mini user comment`)
+- `get_caricature_scores.py`: script to run to compute individuation and exaggeration scores for a given dataset of simulations ~~(example usage: `python get_caricature_scores.py examples/twitter_mini user comment`)~~
 - `generation_scripts`: example scripts to generate simulations in different contexts 
 - `topics`: lists of topics for each context.
 - `generate_embeddings.ipynb`: compute embeddings for output data
@@ -13,4 +13,4 @@ This repository contains the code and data associated with **CoMPosT: Characteri
 
 # Debugging Tips
 - to change to correct version of numpy: `pip install --upgrade  numpy==1.22.0`
-- to change to correct location for python: `sudo ln -sf /usr/bin/python /usr/local/bin/python`
+- example usage should be `python3 get_caricature_scores.py example/twitter_mini user comment`
