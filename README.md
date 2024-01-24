@@ -10,3 +10,7 @@ This repository contains the code and data associated with **CoMPosT: Characteri
 
 # Data
 `data`: generated simulations for the Online Forum and Interview contexts
+
+# Debugging Tips
+- to change to correct version of numpy: `pip install --upgrade  numpy==1.22.0`
+- to change to correct location for python: `sudo ln -sf /usr/bin/python /usr/local/bin/python`
