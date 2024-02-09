@@ -13,4 +13,4 @@ This repository contains the code and data associated with **CoMPosT: Characteri
 
 # Debugging Tips
 - to change to correct version of numpy: `pip install --upgrade  numpy==1.22.0`
-- example usage should be `python3 get_caricature_scores.py example/twitter_mini user comment`
+- example usage should be `python3.10 get_caricature_scores.py example/twitter_mini user comment`

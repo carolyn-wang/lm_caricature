@@ -102,7 +102,7 @@ def get_log_odds(df1, df2, df0,verbose=False,lower=True):
 def compute_exaggeration_scores(df,emb_dict,default_persona_term,default_topic_term):
     topwords = {}
     for t in df['topic'].unique():
-        print(t)
+        print("t:", t)
         for p in df['persona'].unique():
             tempdf1 = df.loc[(df['persona']==default_persona_term)&(df['topic']==t)]
             tempdf2 = df.loc[(df['persona']==p)&(df['topic']==default_topic_term)]
@@ -169,9 +169,8 @@ def compute_exaggeration_scores(df,emb_dict,default_persona_term,default_topic_t
                 t= pt[1]
                 if p!= 'person':
                     df_imp = df.loc[(df.topic==t)&(df.persona==p)]
-            #         print(df_imp)
                     df_control_t = df.loc[(df.topic==t)&(df.persona==default_persona_term)]
-                    df_control_p = df.loc[(df.topic=='comment')&(df.persona==p)]
+                    df_control_p = df.loc[(df.topic=='baseline')&(df.persona==p)]
                     sims = [cos_sim(x,axes[personatopic][0]) for x in df_imp['embeddings']]
                     sims_t = [cos_sim(x,axes[personatopic][0]) for x in df_control_t['embeddings']]
                     sims_p = [cos_sim(x,axes[personatopic][0]) for x in df_control_p['embeddings']]

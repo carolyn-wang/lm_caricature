@@ -65,6 +65,8 @@ def main():
     print("Computing Exaggeration Scores")
     exag_scores_p, exag_scores_t = compute_exaggeration_scores(df_with_embeddings, emb_dict, default_persona_term, default_topic_term)
 
+    # print("exag_scores_t", exag_scores_t)
+    
     # plot exaggeration socres
     plot_exag_scores(exag_scores_t, df, filename,default_persona_term, default_topic_term)
 
@@ -170,6 +172,10 @@ def plot_exag_scores(topic_dict_res, df, filename,default_persona_term,default_t
                 p_dict[x].append(y)
             else:
                 p_dict[x] = [y]
+    print("num keys:", range(len(p_dict.keys())))
+    print('p_dict', p_dict.items())
+    print("means:", [np.mean(v) for p, v in p_dict.items()])
+    print('stds:', [np.std(v)for p, v in p_dict.items()])
     plt.errorbar(range(len(p_dict.keys())), [np.mean(v) for p, v in p_dict.items()], [np.std(v)for p, v in p_dict.items()],elinewidth=5,marker='o',label=filename,ms=20, mew=5,linewidth=0,alpha=0.5)
     parse_labels = []
     for x,y in topic_dict_res[t]:
